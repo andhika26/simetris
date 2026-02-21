@@ -15,7 +15,7 @@
     <meta name="author" content="ColorlibHQ" />
     <meta
       name="description"
-      content="AdminLTE is a Free Bootstrap 5 Admin Dashboard, 30 example pages using Vanilla JS. Fully accessible with WCAG 2.1 AA compliance."
+      content="SIMETRIS 1.0 is a free admin dashboard template based on Bootstrap 5. It features a clean and modern design, responsive layout, and a wide range of UI components and plugins to help you build powerful and user-friendly web applications."
     />
     <meta
       name="keywords"
