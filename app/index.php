@@ -193,21 +193,10 @@
                   <li class="nav-item">
                     <a href="./index.html" class="nav-link active">
                       <i class="nav-icon bi bi-circle"></i>
-                      <p>Dashboard KIB A</p>
+                      <p>Dashboard KIB</p>
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a href="./index2.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Dashboard KIB B</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="./index3.html" class="nav-link">
-                      <i class="nav-icon bi bi-circle"></i>
-                      <p>Dashboard KIB C</p>
-                    </a>
-                  </li>
+                  
                 </ul>
               </li>
               <li class="nav-item menu-open">
