@@ -201,7 +201,7 @@
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-speedometer"></i>
+                  <i class="nav-icon bi bi-database"></i>
                   <p>
                     Master Data
                     <i class="nav-arrow bi bi-chevron-right"></i>
@@ -230,7 +230,7 @@
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-speedometer"></i>
+                  <i class="nav-icon bi bi-swape-horizontal"></i>
                   <p>
                     Mutasi Data
                     <i class="nav-arrow bi bi-chevron-right"></i>
