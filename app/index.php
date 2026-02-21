@@ -284,15 +284,14 @@
       <!--begin::Footer-->
       <footer class="app-footer">
         <!--begin::To the end-->
-        <div class="float-end d-none d-sm-inline">Anything you want</div>
+        <div class="float-end d-none d-sm-inline"><i class="bi bi-building"></i> PPP Bulu <i class="bi bi-person-circle"></i> PLK Studio</div>
         <!--end::To the end-->
         <!--begin::Copyright-->
         <strong>
-          Copyright &copy; 2014-2025&nbsp;
-          <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
+          &copy; 2026&nbsp;
+          <a href="#" class="text-decoration-none">SIMETRIS Version 1.0</a>
         </strong>
-        All rights reserved.
-        <!--end::Copyright-->
+              <!--end::Copyright-->
       </footer>
       <!--end::Footer-->
     </div>
