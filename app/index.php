@@ -191,7 +191,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="./index.html" class="nav-link active">
+                    <a href="./index.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Dashboard KIB</p>
                     </a>
@@ -199,7 +199,7 @@
                   
                 </ul>
               </li>
-              <li class="nav-item menu-open">
+              <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
@@ -209,23 +209,48 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="./index.html" class="nav-link active">
+                    <a href="./index.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
-                      <p>Form KIB A</p>
+                      <p>Formulir KIB</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="./index2.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
-                      <p>Form KIB B</p>
+                      <p>Rekapitulasi KIB</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="./index3.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
-                      <p>Form KIB C</p>
+                      <p>Cetak Label KIB</p>
                     </a>
                   </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon bi bi-speedometer"></i>
+                  <p>
+                    Mutasi Data
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="./index.html" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Form Mutasi</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="./index.html" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Rekapitulasi Mutasi</p>
+                    </a>
+                  </li>
+                  
+    
                 </ul>
               </li>
               <!-- untuk khusus role admin -->
