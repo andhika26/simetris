@@ -15,7 +15,7 @@
 
 
             default:
-				include "404.php";
+				include "view/404.php";
 				break;
 		}
 	}else{

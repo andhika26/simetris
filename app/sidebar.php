@@ -40,7 +40,19 @@
                   <li class="nav-item">
                     <a href="./formulir-kiba" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
-                      <p>Formulir KIB</p>
+                      <p>Formulir KIB A</p>
+                    </a>
+                  </li>
+                   <li class="nav-item">
+                    <a href="./formulir-kibb" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Formulir KIB B</p>
+                    </a>
+                  </li>
+                   <li class="nav-item">
+                    <a href="./formulir-kibc" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Formulir KIB C</p>
                     </a>
                   </li>
                   <li class="nav-item">
@@ -78,9 +90,35 @@
                       <p>Rekapitulasi Mutasi</p>
                     </a>
                   </li>
-                  
-    
                 </ul>
+
+
+              </li>
+
+               <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon bi bi-gear"></i>
+                  <p>
+                    Pengaturan
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="./index.html" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Data Pengguna</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="./index.html" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Histori Data</p>
+                    </a>
+                  </li>
+                </ul>
+
+                
               </li>
               <!-- untuk khusus role admin -->
               <li class="nav-header">Pengaturan</li>
