@@ -5,9 +5,14 @@
  
 		switch ($page) {
 		    
-		     case 'home':
+		    case 'home':
                 include "view/home.php";
 				break;
+
+			case 'formulir-kiba':
+                include "view/formulir-kiba.php";
+				break;
+
 
             default:
 				include "404.php";
