@@ -38,7 +38,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="./index.html" class="nav-link">
+                    <a href="./formulir-kiba" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Formulir KIB</p>
                     </a>
@@ -99,7 +99,23 @@
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon bi bi-circle text-info"></i>
-                  <p>Informational</p>
+                  <?php
+require_once 'load_env.php';
+
+$host = getenv('DB_HOST');
+$db   = getenv('DB_NAME');
+$user = getenv('DB_USER');
+$pass = getenv('DB_PASS');
+
+// Membuat koneksi
+$conn = new mysqli($host, $user, $pass, $db);
+
+// Periksa koneksi
+if ($conn->connect_error) {
+    die("Koneksi Gagal: " . $conn->connect_error);
+}
+echo "<p>Koneksi Berhasil!</p>";
+?>
                 </a>
               </li>
             </ul>
