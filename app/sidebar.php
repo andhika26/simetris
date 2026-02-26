@@ -104,7 +104,7 @@
                   <li class="nav-item">
                     <a href="./index.html" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
-                      <p>Form Mutasi</p>
+                      <p>Data Ruangan</p>
                     </a>
                   </li>
                   <li class="nav-item">
