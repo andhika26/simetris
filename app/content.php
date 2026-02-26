@@ -13,6 +13,11 @@
                 include "view/formulir-kiba.php";
 				break;
 
+			case 'kiba':
+				include "view/data-kiba.php";
+				break;
+
+
 
             default:
 				include "view/404.php";

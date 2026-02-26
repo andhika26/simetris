@@ -27,6 +27,7 @@
     <meta name="supported-color-schemes" content="light dark" />
     <link rel="preload" href="./css/adminlte.css" as="style" />
     <!--end::Accessibility Features-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!--begin::Fonts-->
     <link
       rel="stylesheet"
@@ -68,6 +69,18 @@
       integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4="
       crossorigin="anonymous"
     />
+
+    <!-- DataTables -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.bootstrap4.min.css">
+
+  <style>
+    /* Menyelaraskan posisi tombol ekspor agar rapi */
+    .dt-buttons {
+      margin-bottom: 15px;
+    }
+  </style>
     
   </head>
   <!--end::Head-->
@@ -417,6 +430,81 @@
       sparkline3.render();
     </script>
     <!--end::Script-->
+    <!-- JQUERY (WAJIB) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables & Plugins -->
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.bootstrap4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.colVis.min.js"></script>
+
+<script>
+  $(function () {
+    // Inisialisasi DataTable pada ID example1
+    var table = $("#example1").DataTable({
+      "responsive": true, 
+      "lengthChange": true, // MENGAKTIFKAN DROPDOWN JUMLAH DATA
+      "autoWidth": false,
+      "paging": true,       // MENGAKTIFKAN PAGING
+      "searching": true,    // MENGAKTIFKAN PENCARIAN
+      "ordering": true,     // MENGAKTIFKAN SORTING KOLOM
+      "info": true,         // MENAMPILKAN INFO JUMLAH DATA
+      "buttons": [
+        {
+          extend: 'copy',
+          text: '<i class="fas fa-copy"></i> Salin',
+          className: 'btn-sm btn-info'
+        },
+        {
+          extend: 'excel',
+          text: '<i class="fas fa-file-excel"></i> Excel',
+          className: 'btn-sm btn-success'
+        },
+        {
+          extend: 'pdf',
+          text: '<i class="fas fa-file-pdf"></i> PDF',
+          className: 'btn-sm btn-danger'
+        },
+        {
+          extend: 'print',
+          text: '<i class="fas fa-print"></i> Cetak',
+          className: 'btn-sm btn-dark'
+        },
+        {
+          extend: 'colvis',
+          text: 'Kolom',
+          className: 'btn-sm btn-secondary'
+        }
+      ],
+      // Mengubah teks ke Bahasa Indonesia (Opsional)
+      "language": {
+        "sSearch": "Cari:",
+        "lengthMenu": "Tampilkan _MENU_ entri",
+        "info": "Menampilkan _START_ sampai _END_ dari _TOTAL_ entri",
+        "infoEmpty": "Menampilkan 0 sampai 0 dari 0 entri",
+        "infoFiltered": "(disaring dari _MAX_ total entri)",
+        "zeroRecords": "Tidak ditemukan data yang sesuai",
+        "paginate": {
+          "next": "Berikutnya",
+          "previous": "Sebelumnya"
+        }
+      }
+    });
+
+    // Menempatkan tombol ekspor ke dalam container wrapper
+    table.buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+  });
+</script>
   </body>
   <!--end::Body-->
 </html>

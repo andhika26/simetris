@@ -56,7 +56,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="./index2.html" class="nav-link">
+                    <a href="./kiba" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Rekapitulasi KIB</p>
                     </a>
