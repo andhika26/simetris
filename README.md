@@ -3,3 +3,6 @@ Tampilan Login
 
 <img width="1920" height="878" alt="image" src="https://github.com/user-attachments/assets/98e2c36c-4f3c-421d-bc70-89d21d9c5558" />
 Dashboard KIB
+
+<img width="1920" height="878" alt="image" src="https://github.com/user-attachments/assets/b18e9d2c-efd4-4d09-a3f2-49855f532714" />
+Contoh Tampilan Data Table
