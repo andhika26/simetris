@@ -20,7 +20,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="./index.html" class="nav-link">
+                    <a href="./home" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Dashboard KIB</p>
                     </a>
@@ -55,10 +55,33 @@
                       <p>Formulir KIB C</p>
                     </a>
                   </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon bi bi-file-earmark-pdf-fill"></i>
+                  <p>
+                    Laporan Data
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
                   <li class="nav-item">
                     <a href="./kiba" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
-                      <p>Rekapitulasi KIB</p>
+                      <p>Rekapitulasi KIB A</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="./kibb" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Rekapitulasi KIB B</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="./kibc" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Rekapitulasi KIB C</p>
                     </a>
                   </li>
                   <li class="nav-item">
@@ -125,34 +148,25 @@
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon bi bi-circle text-danger"></i>
-                  <p class="text">Important</p>
+                  <p class="text">Role : Admin</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon bi bi-circle text-warning"></i>
-                  <p>Warning</p>
+                  <p>IP : 192.168.1.100</p>
                 </a>
               </li>
+              <li class="nav-header">Informasi Sistem</li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-circle text-info"></i>
+                 
                   <?php
-require_once 'load_env.php';
-
-$host = getenv('DB_HOST');
-$db   = getenv('DB_NAME');
-$user = getenv('DB_USER');
-$pass = getenv('DB_PASS');
-
-// Membuat koneksi
-$conn = new mysqli($host, $user, $pass, $db);
-
 // Periksa koneksi
 if ($conn->connect_error) {
     die("Koneksi Gagal: " . $conn->connect_error);
 }
-echo "<p>Koneksi Berhasil!</p>";
+echo "<i class='nav-icon bi bi-database-fill-check'></i><p>Sync Berhasil</p>";
 ?>
                 </a>
               </li>
