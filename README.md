@@ -13,7 +13,13 @@ Contoh Tampilan Formulir
 <img width="1920" height="878" alt="image" src="https://github.com/user-attachments/assets/6c7e2557-7be4-483e-8c23-060d732f9416" />
 Login Aplikasi Sudah Terkoneksi ke Database
 
+<img width="1920" height="878" alt="image" src="https://github.com/user-attachments/assets/bdc2c5fd-2e61-474e-84ab-f67e7ed66e92" />
+Pop Up Nama Aplikasi dan Versi Log
+
+
+<br><br>
 ==== Create Tabel User ====
+```sql
 CREATE TABLE `operator` (
   `id` varchar(35) NOT NULL,
   `nama_pegawai` varchar(50) NOT NULL,
