@@ -145,6 +145,12 @@
                       <p>Histori Data</p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a href="./update-log" class="nav-link">
+                      <i class="nav-icon bi bi-circle"></i>
+                      <p>Update Log Versi</p>
+                    </a>
+                  </li>
                 </ul>
 
                 

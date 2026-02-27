@@ -1,5 +1,5 @@
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-4-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
 
 <main class="app-main">
   <div class="app-content-header">
@@ -49,14 +49,34 @@
               </div>
             </div>
 
+            <?php
+            require_once 'load_env.php';
+
+            $host = getenv('DB_HOST');
+            $db   = getenv('DB_NAME');
+            $user = getenv('DB_USER');
+            $pass = getenv('DB_PASS');
+
+            // Membuat koneksi
+            $conn = new mysqli($host, $user, $pass, $db);
+
+            // Ambil semua data dari tabel kode_barang
+            $sql = "SELECT kode, kategori FROM kode_barang ORDER BY kode ASC";
+            $result = $conn->query($sql);
+            ?>
+
             <div class="row mb-3">
               <label class="col-sm-2 col-form-label">Kategori Aset</label>
               <div class="col-sm-5">
-                <select class="form-select select2-init" name="kategori_aset" data-placeholder="Pilih asal usul...">
-                  <option></option>
-                  <option value="Pembelian">1.1.1.1 Pembelian</option>
-                  <option value="Hibah">1.1.1.1 Hibah</option>
-                  <option value="Warisan">1.1.1.1 Warisan</option>
+                <select class="form-select select2-init" name="kategori_aset" data-placeholder="Cari Kode atau Nama Barang...">
+                  <option></option> <?php if ($result->num_rows > 0): ?>
+                    <?php while($row = $result->fetch_assoc()): ?>
+                      <option value="<?= $row['kode']; ?>">
+                        <?= $row['kode'] . " - " . $row['kategori']; ?>
+                      </option>
+                    <?php endwhile; ?>
+                  <?php endif; ?>
+
                 </select>
               </div>
             </div>
@@ -150,11 +170,21 @@
 
 <script>
   $(document).ready(function() {
-    // Inisialisasi semua Select2 dengan satu class
-    $('.select2-init').select2({
-      theme: "bootstrap-5",
-      width: '100%',
-      allowClear: true
+    // Inisialisasi Select2
+    $('.select2-init').each(function() {
+      $(this).select2({
+        theme: "bootstrap-5",
+        width: '100%',
+        placeholder: $(this).data('placeholder'),
+        allowClear: true,
+        // Memaksa search box selalu tampil meskipun pilihan sedikit
+        minimumResultsForSearch: 0 
+      });
+    });
+
+    // Fix: Fokus otomatis pada kolom pencarian saat Select2 dibuka
+    $(document).on('select2:open', () => {
+      document.querySelector('.select2-search__field').focus();
     });
 
     // Reset handler
@@ -163,4 +193,6 @@
       $('.select2-init').val(null).trigger('change');
     });
   });
+
+  
 </script>
