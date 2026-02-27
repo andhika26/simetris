@@ -25,8 +25,21 @@
 				include "view/data-kiba.php";
 				break;
 
+			case 'kibb':
+				include "view/data-kibb.php";
+				break;
 
+			case 'kibc':
+				include "view/data-kibc.php";
+				break;
 
+			case 'data-ruangan':
+				include "view/data-ruangan.php";
+				break;
+
+			case 'ruangan':
+				include "view/ruangan.php";
+				break;
             default:
 				include "view/404.php";
 				break;
