@@ -8,6 +8,36 @@ $pass = getenv('DB_PASS');
 
 // Membuat koneksi
 $conn = new mysqli($host, $user, $pass, $db);
+
+    //$maintenance_mode = true; 
+    $maintenance_mode = false; 
+    
+    if ($maintenance_mode) {
+        // Jika mode maintenance AKTIF, langsung tampilkan halaman maintenance
+        // dan hentikan eksekusi kode selanjutnya
+        include "maintenance.php";
+        exit; 
+    }
+    
+session_start();
+// Check if the 'username' cookie exists and is not empty.
+if (!empty($_COOKIE['username'])) {
+    $idx = $_COOKIE['username'];
+    // Include database connection file from a relative path.
+
+    // Query to fetch user data. Check if the user is an active operator.
+    $query = $conn->query("SELECT * FROM operator WHERE nip='$idx' AND status='1'") or die(mysqli_error($conn));
+    $ro = mysqli_fetch_array($query);
+
+    // If user data is found, assign it to variables.
+    if ($ro) {
+        $pegawai = $ro['nama_pegawai'];
+        $akses = $ro['nip'];
+        $jab = $ro['jabatan'];
+        $kode = $ro['kode'];
+        $kontak = $ro['hp'];
+        $unor = $ro['unor'];
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -136,7 +166,7 @@ $conn = new mysqli($host, $user, $pass, $db);
                   class="user-image rounded-circle shadow"
                   alt="User Image"
                 />
-                <span class="d-none d-md-inline">Admin 1</span>
+                <span class="d-none d-md-inline"><?php echo $pegawai?></span>
               </a>
               <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                 <!--begin::User Image-->
@@ -147,8 +177,8 @@ $conn = new mysqli($host, $user, $pass, $db);
                     alt="User Image"
                   />
                   <p>
-                    Alexander Pierce - Web Developer
-                    <small>Member since Nov. 2023</small>
+                    <?php echo $pegawai ?> - <?php echo $jab ?>
+                    <small><?php echo $kode ?>-<?php echo $unor ?></small>
                   </p>
                 </li>
                 <!--end::User Image-->
@@ -201,7 +231,7 @@ $conn = new mysqli($host, $user, $pass, $db);
         <!--begin::Copyright-->
         <strong>
           &copy; 2026&nbsp;
-          <a href="#" class="text-decoration-none">SIMETRIS Version 1.0</a>
+          <a href="#" id="showVersion" class="text-decoration-none">SIMETRIS Version 1.0</a>
         </strong>
               <!--end::Copyright-->
       </footer>
@@ -519,7 +549,7 @@ $(document).on('click', '#keluar', function(e) {
     
     swal({
         title: 'Konfirmasi Keluar',
-        text: 'Hai <?php echo isset($pegawai) ? $pegawai : "Admin"; ?>, apakah Anda yakin ingin keluar dari Aplikasi?',
+        text: 'Hai <?php echo isset($pegawai) ? $pegawai : "Admin"; ?>, apakah Anda yakin ingin keluar?',
         icon: 'warning',
         buttons: {
             cancel: {
@@ -545,7 +575,29 @@ $(document).on('click', '#keluar', function(e) {
         // Jika Batal, tidak melakukan apa-apa (user tetap di dashboard)
     });
 });
+
+// Pop-up Alert Nama Aplikasi dan Versi Log
+$(document).on('click', '#showVersion', function(e) {
+    e.preventDefault();
+    swal({
+        title: "SIMETRIS 1.0",
+        text: "Sistem Informasi Manajemen Aset dan Inventaris\n\nVersi Log:\n- Update Dashboard UI (2026)\n- Security Patch v1.0.2\n- Integrasi Database Terpusat",
+        icon: "info",
+        button: "Tutup",
+    });
+});
 </script>
   </body>
   <!--end::Body-->
 </html>
+<?php
+    } else {
+        // Redirect if the account is blocked or inactive.
+        session_destroy();
+        echo "<script>swal('SIMETRIS', 'Akun Anda Belum Aktif atau Diblokir!', 'warning').then((value) => { history.back(); });</script>";
+    }
+} else {
+    // Redirect to login page if the 'username' cookie doesn't exist.
+    echo "<script type='text/javascript'>document.location='../oss/login'</script>";
+}
+?>

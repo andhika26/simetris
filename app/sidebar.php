@@ -154,7 +154,7 @@
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon bi bi-circle text-danger"></i>
-                  <p class="text">Role : Admin</p>
+                  <p class="text">Role : <?php echo $jab ?></p>
                 </a>
               </li>
               <li class="nav-item">
