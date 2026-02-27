@@ -12,3 +12,17 @@ Contoh Tampilan Formulir
 
 <img width="1920" height="878" alt="image" src="https://github.com/user-attachments/assets/6c7e2557-7be4-483e-8c23-060d732f9416" />
 Login Aplikasi Sudah Terkoneksi ke Database
+
+==== Create Tabel User ====
+CREATE TABLE `operator` (
+  `id` varchar(35) NOT NULL,
+  `nama_pegawai` varchar(50) NOT NULL,
+  `nip` varchar(50) NOT NULL,
+  `password` varchar(256) NOT NULL,
+  `jabatan` varchar(50) NOT NULL,
+  `kode` varchar(5) NOT NULL,
+  `hp` varchar(14) NOT NULL,
+  `status` varchar(2) NOT NULL,
+  `unor` varchar(8) NOT NULL,
+  `logmasuk` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
