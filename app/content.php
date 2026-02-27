@@ -13,6 +13,14 @@
                 include "view/formulir-kiba.php";
 				break;
 
+			case 'formulir-kibb':
+                include "view/formulir-kibb.php";
+				break;
+
+			case 'formulir-kibc':
+                include "view/formulir-kibc.php";
+				break;
+
 			case 'kiba':
 				include "view/data-kiba.php";
 				break;
