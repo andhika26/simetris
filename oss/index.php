@@ -1,3 +1,12 @@
+<?php
+
+if (!empty($_COOKIE['username'])) {
+    // Menggunakan header Location dan exit untuk pengalihan yang lebih cepat dan aman daripada script JS
+    header("Location: ../app/home");
+    exit;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -22,13 +31,13 @@
             <!-- Kartu Login -->
             <div class="bg-white/70 backdrop-blur-xl shadow-lg rounded-xl p-8">
 
-                <form action="#" method="POST">
+                <form action="./ess-in" method="POST">
                     <!-- Kolom Username -->
                     <div class="mb-4">
                         <label for="username" class="block text-gray-700 text-sm font-bold mb-2">
                             Username
                         </label>
-                        <input type="text" id="username" name="username" placeholder="Masukkan username Anda"
+                        <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($_COOKIE["username"] ?? ''); ?>" placeholder="Masukkan username Anda"
                                class="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:shadow-outline transition duration-150 ease-in-out">
                     </div>
 
@@ -38,7 +47,7 @@
                             Password
                         </label>
                         <div class="relative">
-                            <input type="password" id="password" name="password" placeholder="Masukkan password Anda"
+                            <input type="password" id="password" name="password" value="<?php echo htmlspecialchars($_COOKIE["password"] ?? ''); ?>" placeholder="Masukkan password Anda"
                                    class="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:shadow-outline transition duration-150 ease-in-out pr-10">
                             <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 hover:text-blue-600">
                                 <!-- Ikon Mata Terbuka -->

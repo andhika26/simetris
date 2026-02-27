@@ -85,8 +85,12 @@ $conn = new mysqli($host, $user, $pass, $db);
   <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.bootstrap4.min.css">
-
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>     
   <style>
+    
     /* Menyelaraskan posisi tombol ekspor agar rapi */
     .dt-buttons {
       margin-bottom: 15px;
@@ -149,20 +153,11 @@ $conn = new mysqli($host, $user, $pass, $db);
                 </li>
                 <!--end::User Image-->
                 <!--begin::Menu Body-->
-                <li class="user-body">
-                  <!--begin::Row-->
-                  <div class="row">
-                    <div class="col-4 text-center"><a href="#">Followers</a></div>
-                    <div class="col-4 text-center"><a href="#">Sales</a></div>
-                    <div class="col-4 text-center"><a href="#">Friends</a></div>
-                  </div>
-                  <!--end::Row-->
-                </li>
+                
                 <!--end::Menu Body-->
                 <!--begin::Menu Footer-->
                 <li class="user-footer">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                  <a href="#" class="btn btn-default btn-flat float-end">Sign out</a>
+                  <a href="../oss/ess-out" id="keluar" class="btn btn-default btn-flat float-end">Sign out</a>
                 </li>
                 <!--end::Menu Footer-->
               </ul>
@@ -515,6 +510,41 @@ $conn = new mysqli($host, $user, $pass, $db);
     // Menempatkan tombol ekspor ke dalam container wrapper
     table.buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
   });
+
+
+   // Logout confirmation
+$(document).on('click', '#keluar', function(e) {
+    e.preventDefault();
+    var link = $(this).attr('href');
+    
+    swal({
+        title: 'Konfirmasi Keluar',
+        text: 'Hai <?php echo isset($pegawai) ? $pegawai : "Admin"; ?>, apakah Anda yakin ingin keluar dari Aplikasi?',
+        icon: 'warning',
+        buttons: {
+            cancel: {
+                text: "Batal",
+                value: null,
+                visible: true,
+                className: "btn btn-secondary",
+                closeModal: true,
+            },
+            confirm: {
+                text: "Ya, Keluar!",
+                value: true,
+                visible: true,
+                className: "btn btn-danger",
+                closeModal: true
+            }
+        },
+        dangerMode: true,
+    }).then((willLogout) => {
+        if (willLogout) {
+            window.location.href = link;
+        }
+        // Jika Batal, tidak melakukan apa-apa (user tetap di dashboard)
+    });
+});
 </script>
   </body>
   <!--end::Body-->
