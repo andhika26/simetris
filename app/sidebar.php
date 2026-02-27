@@ -14,7 +14,7 @@
                 <a href="#" class="nav-link active">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
-                    Dashboard
+                    <strong>Dashboard</strong>
                     <i class="nav-arrow bi bi-chevron-right"></i>
                   </p>
                 </a>
@@ -32,7 +32,7 @@
                 <a href="#" class="nav-link">
                   <i class="nav-icon bi bi-database"></i>
                   <p>
-                    Master Data
+                    <strong>Master Data</strong>
                     <i class="nav-arrow bi bi-chevron-right"></i>
                   </p>
                 </a>
@@ -61,7 +61,7 @@
                 <a href="#" class="nav-link">
                   <i class="nav-icon bi bi-file-earmark-pdf-fill"></i>
                   <p>
-                    Laporan Data
+                    <strong>Laporan Data</strong>
                     <i class="nav-arrow bi bi-chevron-right"></i>
                   </p>
                 </a>
@@ -96,7 +96,7 @@
                 <a href="#" class="nav-link">
                   <i class="nav-icon bi bi-arrow-left-right"></i>
                   <p>
-                    Mutasi Data
+                    <b>Mutasi Data</b>
                     <i class="nav-arrow bi bi-chevron-right"></i>
                   </p>
                 </a>
@@ -128,7 +128,7 @@
                 <a href="#" class="nav-link">
                   <i class="nav-icon bi bi-gear"></i>
                   <p>
-                    Pengaturan
+                    <strong>Pengaturan</strong>
                     <i class="nav-arrow bi bi-chevron-right"></i>
                   </p>
                 </a>

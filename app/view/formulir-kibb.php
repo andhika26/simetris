@@ -19,7 +19,7 @@
   <div class="app-content">
     <div class="container-fluid">
       <div class="card">
-        <div class="card-header"><h3 class="card-title">Tambah Aset Baru</h3></div>
+        <div class="card-header bg-success text-white"><h3 class="card-title">Tambah Aset Baru</h3></div>
         
         <div class="card-body">
           <form id="formAset">

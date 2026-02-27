@@ -19,32 +19,44 @@
   <div class="app-content">
     <div class="container-fluid">
       <div class="card">
-        <div class="card-header"><h3 class="card-title">Entry Data Aset</h3></div>
+        <div class="card-header bg-primary text-white"><h3 class="card-title">Entry Data Aset</h3></div>
         
         <div class="card-body">
           <form id="formKibA">
             <div class="row mb-3">
               <label class="col-sm-2 col-form-label">Nomor KIB</label>
-              <div class="col-sm-10">
+              <div class="col-sm-5">
                 <input type="text" class="form-control bg-light" name="no_kib" value="KIB-A-2024-001" readonly />
               </div>
             </div>
 
             <div class="row mb-3">
               <label class="col-sm-2 col-form-label">Tahun</label>
-              <div class="col-sm-4">
+              <div class="col-sm-5">
                 <input type="number" class="form-control" name="tahun" placeholder="Contoh: 2024" />
               </div>
             </div>
 
             <div class="row mb-3">
               <label class="col-sm-2 col-form-label">Asal Usul</label>
-              <div class="col-sm-10">
+              <div class="col-sm-5">
                 <select class="form-select select2-init" name="asal_usul" data-placeholder="Pilih asal usul...">
                   <option></option>
                   <option value="Pembelian">Pembelian</option>
                   <option value="Hibah">Hibah</option>
                   <option value="Warisan">Warisan</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label class="col-sm-2 col-form-label">Kategori Aset</label>
+              <div class="col-sm-5">
+                <select class="form-select select2-init" name="kategori_aset" data-placeholder="Pilih asal usul...">
+                  <option></option>
+                  <option value="Pembelian">1.1.1.1 Pembelian</option>
+                  <option value="Hibah">1.1.1.1 Hibah</option>
+                  <option value="Warisan">1.1.1.1 Warisan</option>
                 </select>
               </div>
             </div>

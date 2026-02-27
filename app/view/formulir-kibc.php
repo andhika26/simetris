@@ -10,6 +10,10 @@
   <div class="app-content">
     <div class="container-fluid">
       <div class="card">
+        <div class="card-header bg-warning">
+          <h3 class="card-title">Entry Data Aset</h3>
+        </div>
+
         <div class="card-body">
           <form id="formKibC">
             <div class="row mb-3">
