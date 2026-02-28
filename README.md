@@ -19,7 +19,8 @@ Pop Up Nama Aplikasi dan Versi Log
 <img width="1920" height="878" alt="image" src="https://github.com/user-attachments/assets/1c4ffde7-e51f-4fdf-b06f-1973f03fdafd" />
 Form Tambah User telah ditambahkan
 
-
+=== Code Error / Atau belum berjalan sempurna ===
+1. Fungsi Index Pencarian pada Kolom Select / Dropdown
 
 <br><br>
 ==== Create Tabel User ====
