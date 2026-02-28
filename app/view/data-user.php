@@ -76,10 +76,10 @@ $query = mysqli_query($conn, "SELECT * FROM operator ORDER BY id DESC");
                 <td><?= htmlspecialchars($row['unor']); ?></td>
                 <td><small><?= date('d/m/Y H:i', strtotime($row['logmasuk'])); ?></small></td>
                 <td class="text-center">
-                  <a href="edit_operator.php?id=<?= $row['id']; ?>" class="btn btn-sm btn-warning" title="Edit">
+                  <a href="./action/proses_edituser.php?id=<?= $row['id']; ?>" class="btn btn-sm btn-warning" title="Edit">
                     <i class="bi bi-pencil-square"></i>
                   </a>
-                  <a href="reset_password_wa.php?id=<?= $row['id']; ?>" class="btn btn-sm btn-info" onclick="confirmResetPassword(event, this.href)" title="Reset & Kirim Password via WA">
+                  <a href="./action/proses_resetuser.php?id=<?= $row['id']; ?>" class="btn btn-sm btn-info" onclick="confirmResetPassword(event, this.href)" title="Reset & Kirim Password via WA">
                     <i class="bi bi-whatsapp"></i>
                   </a>
                   <?php if($row['status'] == '1'): ?>
@@ -91,7 +91,7 @@ $query = mysqli_query($conn, "SELECT * FROM operator ORDER BY id DESC");
                       <i class="bi bi-toggle-on"></i>
                     </a>
                   <?php endif; ?>
-                  <a href="hapus_operator.php?id=<?= $row['id']; ?>" 
+                  <a href="./action/proses_hapususer.php?id=<?= $row['id']; ?>" 
                      class="btn btn-sm btn-danger" 
                      onclick="confirmDelete(event, this.href)"
                      title="Hapus">
