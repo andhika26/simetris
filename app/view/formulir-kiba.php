@@ -1,5 +1,5 @@
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-4-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
 
 <main class="app-main">
   <div class="app-content-header">
@@ -50,12 +50,7 @@
             </div>
 
             <?php
-            require_once 'load_env.php';
-
-            $host = getenv('DB_HOST');
-            $db   = getenv('DB_NAME');
-            $user = getenv('DB_USER');
-            $pass = getenv('DB_PASS');
+            require_once '../load_env.php';
 
             // Membuat koneksi
             $conn = new mysqli($host, $user, $pass, $db);
@@ -177,6 +172,7 @@
         width: '100%',
         placeholder: $(this).data('placeholder'),
         allowClear: true,
+        dropdownParent: $(this).parent(),
         // Memaksa search box selalu tampil meskipun pilihan sedikit
         minimumResultsForSearch: 0 
       });

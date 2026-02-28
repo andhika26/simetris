@@ -1,10 +1,5 @@
 <?php
-require_once 'load_env.php';
-
-$host = getenv('DB_HOST');
-$db   = getenv('DB_NAME');
-$user = getenv('DB_USER');
-$pass = getenv('DB_PASS');
+require_once '../load_env.php';
 
 // Membuat koneksi
 $conn = new mysqli($host, $user, $pass, $db);

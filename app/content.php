@@ -40,6 +40,21 @@
 			case 'ruangan':
 				include "view/ruangan.php";
 				break;
+
+			case 'user':
+				include "view/data-user.php";
+				break;
+
+			case 'formulir-user':
+				include "view/formulir-tambahuser.php";
+				break;
+
+			// proses data
+
+			case 'proses_tambahuser':
+				include "action/proses_tambahuser.php";
+				break;
+
             default:
 				include "view/404.php";
 				break;

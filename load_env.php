@@ -26,4 +26,11 @@ function loadEnv($path) {
 
 // Panggil fungsi untuk memuat file .env
 loadEnv(__DIR__ . '/.env');
+
+$host = getenv('DB_HOST');
+$db   = getenv('DB_NAME');
+$user = getenv('DB_USER');
+$pass = getenv('DB_PASS');
+
+
 ?>

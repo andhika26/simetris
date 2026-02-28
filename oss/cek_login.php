@@ -41,7 +41,7 @@
 session_start();
 
 // menghubungkan dengan koneksi
-require_once '../app/load_env.php';
+require_once '../load_env.php';
 
 $host = getenv('DB_HOST');
 $db   = getenv('DB_NAME');

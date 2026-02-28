@@ -134,19 +134,19 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="./index.html" class="nav-link">
+                    <a href="./user" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Data Pengguna</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="./index.html" class="nav-link">
+                    <a href="./log-histori" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Histori Data</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="./update-log" class="nav-link">
+                    <a href="./update-versi" class="nav-link">
                       <i class="nav-icon bi bi-circle"></i>
                       <p>Update Log Versi</p>
                     </a>
