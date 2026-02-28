@@ -16,6 +16,10 @@ Login Aplikasi Sudah Terkoneksi ke Database
 <img width="1920" height="878" alt="image" src="https://github.com/user-attachments/assets/bdc2c5fd-2e61-474e-84ab-f67e7ed66e92" />
 Pop Up Nama Aplikasi dan Versi Log
 
+<img width="1920" height="878" alt="image" src="https://github.com/user-attachments/assets/1c4ffde7-e51f-4fdf-b06f-1973f03fdafd" />
+Form Tambah User telah ditambahkan
+
+
 
 <br><br>
 ==== Create Tabel User ====
@@ -738,3 +742,17 @@ INSERT INTO `kode_barang` (`id`, `kode`, `kategori`) VALUES
 (690, '1.3.2.02.01.06.102', 'Mobil Golfcar'),
 (691, '1.3.2.02.01.06.103', 'Rantis Rescue Samapta'),
 (692, '1.3.2.02.01.06.104', 'Ransus Satwa Anjing Type Kecil');
+```
+
+=== Membuat Tabel Konfigurasi Whatsapp ===
+```
+CREATE TABLE `konfig_wa` (
+  `id` varchar(255) CHARACTER SET latin1 NOT NULL,
+  `number` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `token` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `status` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `device` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `url_pesan` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `app` varchar(255) CHARACTER SET latin1 DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
