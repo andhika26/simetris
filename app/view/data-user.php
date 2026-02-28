@@ -83,11 +83,11 @@ $query = mysqli_query($conn, "SELECT * FROM operator ORDER BY id DESC");
                     <i class="bi bi-whatsapp"></i>
                   </a>
                   <?php if($row['status'] == '1'): ?>
-                    <a href="status_operator.php?id=<?= $row['id']; ?>&status=0" class="btn btn-sm btn-dark" onclick="confirmStatusChange(event, this.href, 'menonaktifkan')" title="Non-aktifkan">
+                    <a href="./action/proses_statususer.php?id=<?= $row['id']; ?>&status=0" class="btn btn-sm btn-dark" onclick="confirmStatusChange(event, this.href, 'menonaktifkan')" title="Non-aktifkan">
                       <i class="bi bi-toggle-off"></i>
                     </a>
                   <?php else: ?>
-                    <a href="status_operator.php?id=<?= $row['id']; ?>&status=1" class="btn btn-sm btn-success" onclick="confirmStatusChange(event, this.href, 'mengaktifkan')" title="Aktifkan">
+                    <a href="./action/proses_statususer.php?id=<?= $row['id']; ?>&status=1" class="btn btn-sm btn-success" onclick="confirmStatusChange(event, this.href, 'mengaktifkan')" title="Aktifkan">
                       <i class="bi bi-toggle-on"></i>
                     </a>
                   <?php endif; ?>
@@ -136,6 +136,22 @@ $query = mysqli_query($conn, "SELECT * FROM operator ORDER BY id DESC");
         swal({
             title: "Apakah Anda yakin?",
             text: "Setelah dihapus, data tidak dapat dipulihkan!",
+            icon: "warning",
+            buttons: ["Batal", "Ya, Hapus"],
+            dangerMode: true,
+        })
+        .then((willDelete) => {
+            if (willDelete) {
+                window.location.href = url;
+            }
+        });
+    }
+
+    function confirmResetPassword(event, url) {
+        event.preventDefault();
+        swal({
+            title: "Apakah Anda yakin?",
+            text: "Anda akan mereset password dan mengirimkan password baru via WhatsApp!",
             icon: "warning",
             buttons: ["Batal", "Ya, Hapus"],
             dangerMode: true,
