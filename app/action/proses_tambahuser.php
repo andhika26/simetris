@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
 
         require_once '../load_env.php';
 
-        // Membuat koneksi
+        // Membuat koneksi db
         $koneksi = new mysqli($host, $user, $pass, $db);
                 
         $querywa = mysqli_query($koneksi, "SELECT * FROM konfig_wa WHERE status='1'") or die (mysqli_error());
