@@ -16,56 +16,50 @@
   <div class="app-content">
     <div class="container-fluid">
       <div class="card shadow-sm">
-        <div class="card-header bg-primary">
-          <h3 class="card-title text-white">Tabel Master Ruangan</h3>
+        <div class="card-header bg-primary d-flex justify-content-between align-items-center">
+          <h3 class="card-title text-white mb-0">Tabel Master Ruangan</h3>
+          
         </div>
+        
         <div class="card-body">
-          <table id="example1" class="table table-bordered table-striped table-hover dt-responsive nowrap" style="width:100%">
+          <table id="example1" class="table table-bordered table-striped table-hover nowrap" style="width:100%">
             <thead>
               <tr>
-                <th style="width: 10%">No</th>
+                <th style="width: 5%">No</th>
                 <th>Nama Ruangan</th>
                 <th>Lokasi / Gedung</th>
                 <th class="text-center" style="width: 15%">Aksi</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Ruang Rapat Utama</td>
-                <td>Gedung A - Lantai 2</td>
-                <td class="text-center">
-                  <button class="btn btn-sm btn-warning" title="Edit"><i class="bi bi-pencil-square"></i></button>
-                  <button class="btn btn-sm btn-danger" title="Hapus"><i class="bi bi-trash"></i></button>
-                </td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Laboratorium Komputer</td>
-                <td>Gedung B - Lantai 1</td>
-                <td class="text-center">
-                  <button class="btn btn-sm btn-warning" title="Edit"><i class="bi bi-pencil-square"></i></button>
-                  <button class="btn btn-sm btn-danger" title="Hapus"><i class="bi bi-trash"></i></button>
-                </td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Gudang Arsip</td>
-                <td>Gedung C - Samping Kantin</td>
-                <td class="text-center">
-                  <button class="btn btn-sm btn-warning" title="Edit"><i class="bi bi-pencil-square"></i></button>
-                  <button class="btn btn-sm btn-danger" title="Hapus"><i class="bi bi-trash"></i></button>
-                </td>
-              </tr>
+              <?php
+              require_once '../load_env.php';
+              if (!$conn) { die("Koneksi gagal: " . mysqli_connect_error()); }
+
+              $query = mysqli_query($conn, "SELECT * FROM ruangan ORDER BY id_ruang DESC");
+              $no = 1;
+
+              while ($data = mysqli_fetch_assoc($query)) {
+              ?>
+                <tr>
+                  <td><?= $no++; ?></td>
+                  <td><?= htmlspecialchars($data['nama_ruangan']); ?></td>
+                  <td><?= htmlspecialchars($data['lokasi']); ?></td>
+                  <td class="text-center">
+                    <div class="btn-group">
+                        <a href="edit_ruangan.php?id=<?= $data['id_ruang']; ?>" class="btn btn-sm btn-warning">
+                           <i class="bi bi-pencil-square"></i>
+                        </a>
+                        <button class="btn btn-sm btn-danger btn-hapus" 
+                                data-id="<?= $data['id_ruang']; ?>" 
+                                data-nama="<?= $data['nama_ruangan']; ?>">
+                          <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
+                  </td>
+                </tr>
+              <?php } ?>
             </tbody>
-            <tfoot>
-              <tr>
-                <th>No</th>
-                <th>Nama Ruangan</th>
-                <th>Lokasi / Gedung</th>
-                <th class="text-center">Aksi</th>
-              </tr>
-            </tfoot>
           </table>
         </div>
       </div>

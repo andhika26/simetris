@@ -22,7 +22,7 @@
               <h3 class="card-title"><i class="bi bi-plus-circle me-1"></i> Tambah Ruangan Baru</h3>
             </div>
             
-            <form id="formTambahRuangan">
+            <form id="formTambahRuangan" action="proses_tambahruangan" method="POST" enctype="multipart/form-data">
               <div class="card-body">
                 <div class="mb-3">
                   <label for="nama_ruangan" class="form-label fw-bold">Nama Ruangan</label>
@@ -34,9 +34,9 @@
                   <label for="lokasi" class="form-label fw-bold">Lokasi / Gedung</label>
                   <select class="form-select" id="lokasi" name="lokasi" required>
                     <option value="" selected disabled>Pilih Lokasi...</option>
-                    <option value="Gedung Sayap Barat">UPT PPP BULU</option>
-                    <option value="Gedung Sayap Timur">Instalasi Bawean</option>
-                    <option value="Gedung Serbaguna">Instalasi Campurejo</option>
+                    <option value="UPT PPP Bulu">UPT PPP BULU</option>
+                    <option value="Instalasi Bawean">Instalasi Bawean</option>
+                    <option value="Instalasi Campurejo">Instalasi Campurejo</option>
                   </select>
                 </div>
 
@@ -49,7 +49,7 @@
 
               <div class="card-footer bg-light d-flex justify-content-end gap-2">
                 <button type="reset" class="btn btn-secondary px-4">Batal</button>
-                <button type="submit" class="btn btn-primary px-4">
+                <button type="submit" class="btn btn-primary px-4" name="simpan">
                   <i class="bi bi-save me-1"></i> Simpan Ruangan
                 </button>
               </div>

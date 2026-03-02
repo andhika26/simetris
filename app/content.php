@@ -55,7 +55,10 @@
 				include "action/proses_tambahuser.php";
 				break;
 
-			
+			case 'proses_tambahruangan':
+				include "action/proses_tambahruangan.php";
+				break;
+
             default:
 				include "view/404.php";
 				break;
