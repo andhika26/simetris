@@ -110,7 +110,7 @@
                   <li class="nav-item">
                     <a href="./ruangan" class="nav-link"> 
                       <i class="nav-icon bi bi-circle"></i>
-                      <p>Ruangan</p>
+                      <p>Tambah Ruang</p>
                     </a>
                   </li>
                   <li class="nav-item">
